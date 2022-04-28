@@ -1,2 +1,24 @@
-<h1>Homes#top</h1>
-<p>Find me in app/views/homes/top.html.erb</p>
+<div class= "container-fluid">
+  <div class="top-image d-flex flex-column justify-content-center align-items-center">
+    <h1 class="title">Challenge_Application!</h1>
+    <h3 class="discription">Amazonのような総合サイト</h3>
+  </div>
+  <h2 class= "text-center">About us</h2><br>
+  <div class= "row">
+    <div class="col text-center">
+      <p>当サイトでは1サイトで複数の機能を使えるように、<br class="d-sm-none">総合サイトを目指しています。
+    </div>
+  </div>
+</div>
+
+  <% if user_signed_in? %>
+
+  <% elsif admin_signed_in? %>
+
+  <% else %>
+    <div class= "d-flex justify-content-center my-5">
+      <%= link_to "新規登録", new_user_registration_path, class: "btn btn-lg btn-primary mx-2" %>
+      <%= link_to "ログイン", new_user_session_path, class: "btn btn-lg btn-success mx-2" %>
+      <%#= link_to "ゲストログイン", guests_guest_sign_in_path, class: "btn btn-lg btn-info", method: :post %>
+    </div>
+  <% end %>
