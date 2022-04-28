@@ -1,0 +1,43 @@
+<header class="shadow-sm">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <%#= link_to 'WelcomeGamers!', '/', class: 'navbar-brand' %>
+      <!--<div class="collapse navbar-collapse" id="navbarNavDropdown">-->
+      <!--  <ul class="navbar-nav ml-auto">-->
+        <% if user_signed_in? %>
+          <a class="navbar-brand" href="/">Challenge_Application!</a>
+          <button class= "navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-sort-down"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><%= link_to destroy_user_session_path, class:"nav-link text-dark", method: :delete do %><i class="fas fa-sign-out-alt"></i>ログアウト<% end %></li>
+            </ul>
+          </div>
+        <% elsif admin_signed_in? %>
+          <a class="navbar-brand" href="/">Challenge_Application!</a>
+          <button class= "navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-sort-down" style="color: #5928b1"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+
+            </ul>
+          </div>
+        <% else %>
+          <a class="navbar-brand" href="/">Challenge_Application!</a>
+          <button class= "navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-sort-down" style="color: #5928b1"></i>
+          </button>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><%= link_to new_user_registration_path, class:"nav-link text-dark" do %><i class="fas fa-user-plus"></i>新規登録<% end %></li>
+              <li class="nav-item"><%= link_to new_user_session_path, class:"nav-link text-dark" do %><i class="fas fa-sign-in-alt"></i>ログイン<% end %></li>
+            </ul>
+          </div>
+        <% end %>
+      <!--  </ul>-->
+      <!--</div>-->
+    </div>
+  </nav>
+</header>
