@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10 mt-5">
+      <% if current_user == @user %>
+        <h2><i class="fas fa-address-card"></i>マイページ</h2>
+      <% else %>
+        <h2><i class="fas fa-user"></i>プロフィール</h2>
+      <% end %>
+      <div class="text-center">
+        <h4><%= @user.name %></h4>
+      </div>
+      <div>
+        <p><%= link_to "プロフィール編集", edit_user_path(current_user.id), class: "btn btn btn-secondary" %></p>
+      </div>
+    </div>
+  </div>
+</div>

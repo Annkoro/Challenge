@@ -13,5 +13,10 @@ Rails.application.routes.draw do
     registrations: "public/registrations",
     sessions: 'public/sessions'
   }
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  # ユーザー側のURLにはpublicはつかない
+  scope module: :public do
+    resources :users, except: [:new, :create, :destroy] do
+    end
+  end
 end
