@@ -4,4 +4,4 @@
 #### 下記実装予定
 - ECサイト
 - TwitterやinstagramのようなcloneSNSサイト
-- Discordのcloneサイト
+- Discordのcloneサイト(action_cable使いたい)
